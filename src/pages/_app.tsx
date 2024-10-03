@@ -5,11 +5,9 @@ import React from "react";
 
 const App = ({ Component, pageProps }: AppProps) => {
     return (
-        <>
-            <PageProvider>
-                <Component {...pageProps} />
-            </PageProvider>
-        </>
+        <PageProvider>
+            <Component {...pageProps} />
+        </PageProvider>
     )
 }
 

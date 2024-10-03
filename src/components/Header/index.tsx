@@ -6,13 +6,13 @@ import Link from 'next/link';
 const Header = () => {
     const { currentPage, setCurrentPage } = usePageContext();
 
-    const pages = [{ name: 'Início', link: '/Home' }, { name: 'Sobre', link: '/Home' }, { name: 'Serviços', link: '/Home' }, { name: 'Depoimentos', link: '/Home' }, { name: 'Contato', link: '/Home' }];
+    const pages = [{ name: 'Início', link: '/home' }, { name: 'Sobre', link: '/about' }, { name: 'Serviços', link: '/Home' }, { name: 'Depoimentos', link: '/Home' }, { name: 'Contato', link: '/Home' }];
 
     return (
         <div className={styles.headerContainer}>
             <div className={`flex justify-between ${styles.header}`}>
                 <div className='ml-12'>
-                    <Image className='ml-8' src={'/Logo.jpg'} alt={'logo'} width={165} height={25} />
+                    <Image className='ml-8' src={'/Logo.png'} alt={'logo'} width={165} height={25} />
                 </div>
                 <div>
                     <ul className='flex gap-8 mr-20'>
