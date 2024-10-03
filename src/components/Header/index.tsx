@@ -1,11 +1,12 @@
-import Image from 'next/image';
-import styles from './index.module.css'
 import { usePageContext } from '@/context/PageContexts';
+import Image from 'next/image';
+import styles from './index.module.css';
+import Link from 'next/link';
 
 const Header = () => {
     const { currentPage, setCurrentPage } = usePageContext();
 
-    const pages = ['Início', 'Sobre', 'Serviços', 'Depoimentos', 'Contato'];
+    const pages = [{ name: 'Início', link: '/Home' }, { name: 'Sobre', link: '/Home' }, { name: 'Serviços', link: '/Home' }, { name: 'Depoimentos', link: '/Home' }, { name: 'Contato', link: '/Home' }];
 
     return (
         <div className={styles.headerContainer}>
@@ -19,15 +20,17 @@ const Header = () => {
                             <li key={index} style={{
                                 borderBottom: currentPage === index ? '2px solid #69B99D' : 'none',
                             }}>
-                                <p className='font-medium text-base'
-                                    onClick={() => setCurrentPage(index)}
-                                    style={{
-                                        color: currentPage === index ? '#69B99D' : 'black',
-                                        cursor: 'pointer'
-                                    }}
-                                >
-                                    {page}
-                                </p>
+                                <Link href={page.link}>
+                                    <p className='font-medium text-base'
+                                        onClick={() => setCurrentPage(index)}
+                                        style={{
+                                            color: currentPage === index ? '#69B99D' : 'black',
+                                            cursor: 'pointer'
+                                        }}
+                                    >
+                                        {page.name}
+                                    </p>
+                                </Link>
                             </li>
                         ))}
                     </ul>

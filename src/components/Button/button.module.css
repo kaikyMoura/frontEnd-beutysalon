@@ -1,0 +1,9 @@
+.styledButton {
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 218px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
