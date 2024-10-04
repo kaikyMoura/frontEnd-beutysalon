@@ -1,41 +1,44 @@
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import styles from "./button.module.css";
 
 interface ButtonProps {
     type: 'primary' | 'secondary';
     width?: number
     height?: number
-    text: string;
+    text: string
+    icon?: ReactNode
     className?: string;
     action?: (event: unknown) => unknown
 }
 
-const Button = ({ text, width, height, action, type, className }: ButtonProps) => {
+const Button = ({ ...props }: ButtonProps) => {
     const [color, setColor] = useState('')
 
     const handleClick = (event: { preventDefault: () => void; }) => {
         event.preventDefault()
-        if (action) {
-            action(event)
+        if (props.action) {
+            props.action(event)
         }
     }
 
     useEffect(() => {
-        switch (type) {
+        switch (props.type) {
             case 'primary':
                 setColor('#69B99D')
                 break;
             case 'secondary':
                 setColor('white')
         }
-    }, [type])
+    }, [props.type])
 
     return (
-        <>
-            <button className={`${className} ${styles.styledButton}`} style={{ width: width, height: height, backgroundColor: color}} onClick={handleClick}>
-                <p className="font-bold" style={{color: type == 'primary' ? 'white' : '#69B99D'}}>{text}</p>
-            </button>
-        </>
+        <button className={`gap-3 ${props.className} ${styles.styledButton}`} style={{ width: props.width, height: props.height, backgroundColor: color }} onClick={handleClick}>
+            {props.icon ?
+                <div>{props.icon}</div>
+                : null
+            }
+            <p className="font-bold" style={{ color: props.type == 'primary' ? 'white' : '#69B99D' }}>{props.text}</p>
+        </button>
     )
 }
 

@@ -1,0 +1,36 @@
+.container {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height:70%;
+}
+
+.content p {
+    color: #767676;
+}
+
+.footer {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    background-color: #69B99D;
+}
+
+.footer p {
+    color: #F9F9F9;
+}
+
+.footer h2 {
+    color: #F9F9F9;
+}
+
+.footer span {
+    color: #0F241D;
+}

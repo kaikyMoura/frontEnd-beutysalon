@@ -8,7 +8,8 @@ const PhoneIcon = (props) => (
     {...props}
   >
     <path
-      stroke="#69B99D"
+      stroke={props.stroke}
+      fill={props.fill}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
