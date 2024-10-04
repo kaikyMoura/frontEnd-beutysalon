@@ -1,3 +1,4 @@
+export { default as Aspas } from "./Quots";
 export { default as Close } from "./Close";
 export { default as Cosmetic } from "./Cosmetic";
 export { default as Facebook } from "./Facebook";

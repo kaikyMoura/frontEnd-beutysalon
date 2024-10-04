@@ -1,0 +1,32 @@
+.container {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.card {
+    width: 544px;
+    height: 264px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 6px 0px rgba(180, 180, 180, 0.3);
+}
+
+.avatar {
+    border-radius: 1000px;
+    width: 32px;
+    height: 32px;
+}
+
+.content p {
+    color: #0F241D;
+}

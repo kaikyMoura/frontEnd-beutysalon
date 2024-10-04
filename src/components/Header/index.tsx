@@ -1,7 +1,7 @@
 import { usePageContext } from '@/context/PageContexts';
 import Image from 'next/image';
-import styles from './index.module.css';
 import Link from 'next/link';
+import styles from './index.module.css';
 
 const Header = () => {
     const { currentPage, setCurrentPage } = usePageContext();
@@ -17,6 +17,7 @@ const Header = () => {
                 <div>
                     <ul className='flex gap-8 mr-20'>
                         {pages.map((page, index) => (
+
                             <li key={index} style={{
                                 borderBottom: currentPage === index ? '2px solid #69B99D' : 'none',
                             }}>

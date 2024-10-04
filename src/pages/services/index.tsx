@@ -12,10 +12,10 @@ const Services = () => {
                     <div className="mt-20 flex justify-center">
                         <div>
                             <h2 className="font-bold text-4xl text-center">Serviços</h2>
-                            <p className="max-w-lg text-center">Com mais de 10 anos no mercado, o <span style={{ color: "#69B99D"}}>Beautysalon</span> já conquistou clientes de inúmeros países com seus tratamentos exclusivos e totalmente naturais</p>
+                            <p className="max-w-lg text-center mt-4">Com mais de 10 anos no mercado, o <span style={{ color: "#69B99D"}}>Beautysalon</span> já conquistou clientes de inúmeros países com seus tratamentos exclusivos e totalmente naturais</p>
                         </div>
                     </div>
-                    <div className="flex gap-8 mt-20">
+                    <div className="flex gap-8 mt-16">
                         <div className={`${styles.card} flex flex-col items-start`}>
                             <WomanHairIcon className="relative" width="80px" height="80px" fill="#69B99D" />
                             <h3 className="font-bold text-2xl mt-4">Terapia capilar</h3>
