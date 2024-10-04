@@ -1,17 +1,27 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 import Header from "../Header/index";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
+import { usePageContext } from "@/context/PageContexts";
 
 const PageLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
     const router = useRouter()
+    const { pageTitle } = usePageContext();
+
+    useEffect(() => {
+        console.log('Current pathname:', router.pathname);
+        if (router.pathname === '/' || router.pathname === '/_error') {
+            console.log('Redirecionando para /home');
+            router.push('/home');
+        }
+    }, [router]);
 
     return (
         <>
             <Head>
-                <link rel='icon' href='/Logo.png' />
-                <title>{router.pathname}</title>
+                <link rel='icon' href='/headIcon.ico' sizes="256x256" type="image/x-icon" />
+                <title>{pageTitle}</title>
             </Head>
             <Header />
             {/* Adiciona animação de transição ao mudar de página */}

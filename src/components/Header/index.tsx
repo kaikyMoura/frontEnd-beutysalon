@@ -4,9 +4,14 @@ import Link from 'next/link';
 import styles from './index.module.css';
 
 const Header = () => {
-    const { currentPage, setCurrentPage } = usePageContext();
+    const { currentPage, setCurrentPage, setPageTitle } = usePageContext();
 
     const pages = [{ name: 'Início', link: '/home' }, { name: 'Sobre', link: '/about' }, { name: 'Serviços', link: '/services' }, { name: 'Depoimentos', link: '/depoiments' }, { name: 'Contato', link: '/contact' }];
+
+    const handlePageChange = (index: number, name: string) => {
+        setCurrentPage(index)
+        setPageTitle(name)
+    }
 
     return (
         <div className={styles.headerContainer}>
@@ -23,7 +28,7 @@ const Header = () => {
                             }}>
                                 <Link href={page.link}>
                                     <p className='font-medium text-base'
-                                        onClick={() => setCurrentPage(index)}
+                                        onClick={() => handlePageChange(index, page.name)}
                                         style={{
                                             color: currentPage === index ? '#69B99D' : 'black',
                                             cursor: 'pointer'

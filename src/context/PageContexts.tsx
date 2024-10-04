@@ -3,6 +3,8 @@ import React, { createContext, Dispatch, ReactNode, SetStateAction, useState } f
 
 interface PageContextProps {
     currentPage: number,
+    pageTitle: string,
+    setPageTitle: Dispatch<SetStateAction<string>>,
     setCurrentPage: Dispatch<SetStateAction<number>>
 }
 
@@ -10,9 +12,10 @@ const PageContext = createContext<PageContextProps | undefined>(undefined)
 
 export const PageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [currentPage, setCurrentPage] = useState<number>(0);
+    const [pageTitle, setPageTitle] = useState('')
 
     return (
-        <PageContext.Provider value={{ currentPage, setCurrentPage }}>
+        <PageContext.Provider value={{ currentPage, setCurrentPage, pageTitle, setPageTitle }}>
             <PageLayout>
                 {children}
             </PageLayout>
