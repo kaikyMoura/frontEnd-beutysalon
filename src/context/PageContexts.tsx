@@ -1,5 +1,6 @@
 import PageLayout from "@/components/PageLayout";
 import React, { createContext, Dispatch, ReactNode, SetStateAction, useState } from "react";
+import { LoadingProvider } from "./LoadingContext";
 
 interface PageContextProps {
     currentPage: number,
@@ -16,9 +17,11 @@ export const PageProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
     return (
         <PageContext.Provider value={{ currentPage, setCurrentPage, pageTitle, setPageTitle }}>
-            <PageLayout>
-                {children}
-            </PageLayout>
+            <LoadingProvider >
+                <PageLayout>
+                    {children}
+                </PageLayout>
+            </LoadingProvider>
         </PageContext.Provider>
     );
 }
@@ -26,7 +29,7 @@ export const PageProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 export const usePageContext = () => {
     const context = React.useContext(PageContext);
     if (!context) {
-        throw new Error('useAuth must be used within an AuthProvider');
+        throw new Error('usePageContext must be used within an PageProvider');
     }
     return context;
 };
