@@ -6,7 +6,7 @@ import Link from 'next/link';
 const Header = () => {
     const { currentPage, setCurrentPage } = usePageContext();
 
-    const pages = [{ name: 'Início', link: '/home' }, { name: 'Sobre', link: '/about' }, { name: 'Serviços', link: '/Home' }, { name: 'Depoimentos', link: '/Home' }, { name: 'Contato', link: '/Home' }];
+    const pages = [{ name: 'Início', link: '/home' }, { name: 'Sobre', link: '/about' }, { name: 'Serviços', link: '/services' }, { name: 'Depoimentos', link: '/depoiments' }, { name: 'Contato', link: '/contact' }];
 
     return (
         <div className={styles.headerContainer}>
