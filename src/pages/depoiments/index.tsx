@@ -51,8 +51,9 @@ const Depoiments = () => {
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sou cliente deste salão há anos e não consigo imaginar ir a outro lugar! Meu cabelo nunca esteve tão saudável desde que comecei a usar os produtos naturais e veganos que eles recomendam. A equipe é super profissional e sempre me faz sentir especial a cada visita.
                                 </p>
                                 <div className="flex gap-2 w-full relative left-12 mt-4">
-                                    <Image className={styles.avatar} src={"/avatar.png"} alt={"randomWomen"} width={32} height={32} />
+                                    <Image className={styles.avatar} src={"/perfil3.png"} alt={"randomWomen"} width={600} height={1000} />
                                     <p className="flex items-center" style={{ color: "#767676" }}>Mariana Silva</p>
+                                    {/* Imagem de <a href="https://br.freepik.com/fotos-gratis/retrato-de-meio-envelheceu-executiva_4783012.htm">Freepik</a> */}
                                 </div>
                             </div>
                             <div className={`${styles.card} flex flex-col items-start`}>
@@ -61,20 +62,22 @@ const Depoiments = () => {
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Já faz 3 anos que sou cliente deste salão e não poderia estar mais satisfeita! Os tratamentos são maravilhosos e meus cabelos nunca estiveram tão bonitos e bem cuidados. Os produtos naturais e veganos fazem toda a diferença, e os profissionais são sempre atenciosos e muito competentes.
                                 </p>
                                 <div className="flex gap-2 w-full relative left-12 mt-4">
-                                    <Image className={styles.avatar} src={"/avatar2.png"} alt={"randomWomen"} width={32} height={32} />
+                                    <Image className={styles.avatar} src={"/perfil4.png"} alt={"randomWomen"} width={32} height={32} />
                                     <p className="flex items-center" style={{ color: "#767676" }}>Ana Costa</p>
+                                    {/* <a href="https://br.freepik.com/fotos-gratis/retrato-de-um-jovem-executiva-segurando-oculos-em-mao-contra-cinzento-fundo_3717378.htm#fromView=search&page=1&position=52&uuid=fd5b98a6-6301-4db5-90f6-ed65dd3f660e">Imagem de freepik</a> */}
                                 </div>
                             </div>
                         </div>
 
                         <div>
-                        <div className={`${styles.card} flex flex-col items-start`}>
+                            <div className={`${styles.card} flex flex-col items-start`}>
                                 <p className="flex max-w-md text-start gap-1">
                                     <QuotsMarksIcon className="absolute" width="20px" height="26px" fill="#69B99D" />
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Este salão transformou completamente meus cabelos! Sempre tive dificuldade em encontrar produtos que realmente cuidassem dos meus fios, mas aqui tudo mudou. Os tratamentos naturais e veganos deixaram meu cabelo macio, brilhante e muito mais saudável.
                                 </p>
                                 <div className="flex gap-2 w-full relative left-12 mt-4">
-                                    <Image className={styles.avatar} src={"/avatar2.png"} alt={"randomWomen"} width={32} height={32} />
+                                    <Image className={styles.avatar} src={"/perfil5.png"} alt={"randomWomen"} width={32} height={32} />
+                                    {/* Imagem de <a href="https://br.freepik.com/fotos-gratis/mulher-romantica-com-flor-ramos_4284724.htm">Freepik</a> */}
                                     <p className="flex items-center" style={{ color: "#767676" }}>Camila Mendez</p>
                                 </div>
                             </div>
