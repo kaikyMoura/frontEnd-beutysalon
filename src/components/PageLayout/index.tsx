@@ -13,15 +13,11 @@ const PageLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
     const { setLoading } = useLoadingContext()
 
     useEffect(() => {
-        if (router.pathname === '/' || router.pathname === '/_error') {
-            if (router.pathname !== '/home') {
-                router.push('/home');
-            }
+        if (router.pathname !== '/home' && router.pathname === '/' || router.pathname === '/_error') {
+            router.replace('/home');
+            setPageTitle('Início')
         }
-        
-    }, [router, setLoading, setPageTitle]);
 
-    useEffect(() => {
         // Basicamente estou controlando globalmente os loadings da aplicação
         // https://nextjs.org/docs/pages/api-reference/functions/use-router#routerevents
         const handleRouteChange = () => {
@@ -41,7 +37,7 @@ const PageLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
             router.events.off('routeChangeComplete', handleRouteComplete);
             router.events.off('routeChangeError', handleRouteComplete);
         };
-    }, [router.events, setLoading]);
+    }, [router, router.events, setLoading, setPageTitle]);
 
     return (
         <>
