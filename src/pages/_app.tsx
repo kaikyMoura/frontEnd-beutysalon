@@ -1,4 +1,4 @@
-import { PageProvider } from "@/context/PageContexts";
+import { PageProvider } from "@/context/PageContext";
 import { AppProps } from "next/app";
 import '../styles/globals.css';
 

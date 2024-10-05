@@ -1,6 +1,5 @@
 import PageLayout from "@/components/PageLayout";
 import React, { createContext, Dispatch, ReactNode, SetStateAction, useState } from "react";
-import { LoadingProvider } from "./LoadingContext";
 
 interface PageContextProps {
     currentPage: number,
@@ -14,14 +13,12 @@ const PageContext = createContext<PageContextProps | undefined>(undefined)
 export const PageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [currentPage, setCurrentPage] = useState<number>(0);
     const [pageTitle, setPageTitle] = useState('')
-
+    
     return (
         <PageContext.Provider value={{ currentPage, setCurrentPage, pageTitle, setPageTitle }}>
-            <LoadingProvider >
-                <PageLayout>
+            <PageLayout>
                     {children}
-                </PageLayout>
-            </LoadingProvider>
+            </PageLayout>
         </PageContext.Provider>
     );
 }
