@@ -15,7 +15,7 @@ const Depoiments = () => {
     return (
         <div className={styles.container}>
             <div className={styles.content}>
-                <div className="flex flex-col mt-8">
+                <div className="flex flex-col mt-10">
                     <div className="flex justify-center">
                         <h2 className="font-bold text-4xl max-w-md text-center">Depoimentos de quem já passou por aqui</h2>
                     </div>

@@ -1,5 +1,5 @@
 // import { useLoadingContext } from "@/context/LoadingContext";
-import { LoadingProvider } from "@/context/LoadingContext";
+import { useLoadingContext } from "@/context/LoadingContext";
 import { usePageContext } from "@/context/PageContext";
 import { AnimatePresence, motion } from "framer-motion";
 import Head from "next/head";
@@ -9,16 +9,36 @@ import Header from "../Header/index";
 
 const PageLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
     const router = useRouter()
-    const { pageTitle, setPageTitle } = usePageContext();
+    const { pageTitle } = usePageContext();
 
-    // const { setLoading } = useLoadingContext()
+    const { setLoading } = useLoadingContext();
 
     useEffect(() => {
-        if (router.pathname !== '/home' && router.pathname === '/' || router.pathname === '/_error') {
-            router.replace('/home');
-            setPageTitle('Início')
-        }
-    }, [router, router.pathname, setPageTitle]);
+        const timer = setTimeout(() => {
+
+            if (setLoading) {
+                const handleRouteChange = () => {
+                    setLoading(true);
+                };
+
+                const handleRouteComplete = () => {
+                    setLoading(false);
+                };
+
+                router.events.on('routeChangeStart', handleRouteChange);
+                router.events.on('routeChangeComplete', handleRouteComplete);
+                router.events.on('routeChangeError', handleRouteComplete);
+
+                return () => {
+                    router.events.off('routeChangeStart', handleRouteChange);
+                    router.events.off('routeChangeComplete', handleRouteComplete);
+                    router.events.off('routeChangeError', handleRouteComplete);
+                };
+            }
+        }, 0);
+
+        return () => clearTimeout(timer);
+    }, [router, router.events, setLoading]);
 
     return (
         <>
@@ -36,10 +56,7 @@ const PageLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
                     exit={{ opacity: 0, x: -100 }}
                     transition={{ duration: 0.3 }}
                 >
-
-                    <LoadingProvider>
-                        {children}
-                    </LoadingProvider>
+                    {children}
                 </motion.div>
             </AnimatePresence>
         </>
