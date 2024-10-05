@@ -12,7 +12,7 @@ const Home = () => {
           <Button className="mt-4" type={"primary"} text={"Agendar um horário"} />
         </div>
         <div className="relative left-56 top-6">
-          <Image className="absolute z-50 top-12" src={"/salonImage.png"} alt={"randomWomen"} width={561} height={375} />
+          <Image className="absolute z-50 top-12" src={"/salonImage.png"} alt={"salonImage"} width={561} height={375} />
           <div className={`top-20 ml-20 ${styles.imgBackground}`} />
         </div>
       </div>
