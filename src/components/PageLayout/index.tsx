@@ -13,10 +13,12 @@ const PageLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
     const { setLoading } = useLoadingContext()
 
     useEffect(() => {
-        if (router.pathname !== '/home' && router.pathname === '/' || router.pathname === '/_error') {
-            router.replace('/home');
-            setPageTitle('Início')
+        if (router.pathname === '/' || router.pathname === '/_error') {
+            if (router.pathname !== '/home') {
+                router.push('/home');
+            }
         }
+        
     }, [router, setLoading, setPageTitle]);
 
     useEffect(() => {
