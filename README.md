@@ -18,7 +18,7 @@ node -v
 
 ```
 
-Se não estiver instalado, podemos usar a linha de comando para instalar ou acessar a propria página de download do node [Node.js](https://nodejs.org/en/download/prebuilt-installer)
+Se não estiver instalado, podemos usar a linha de comando para instalar ou acessar a propria página de download do [Node.js](https://nodejs.org/en/download/prebuilt-installer)
 
 
 ``` bash
@@ -97,3 +97,6 @@ Framework de CSS utilitário que permite a construção rápida de interfaces de
 
 - [eslint](https://eslint.org/):
  Ferramenta de linting para JavaScript e outros ambientes que permite identificar e corrigir problemas no código.
+
+- [svgr](https://react-svgr.com/):
+Ferramenta que transforma arquivos SVG em componentes React.
