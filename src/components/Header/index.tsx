@@ -6,7 +6,7 @@ import styles from './index.module.css';
 const Header = () => {
     const { currentPage, setCurrentPage, setPageTitle } = usePageContext();
 
-    const pages = [{ name: 'Início', link: '/home' }, { name: 'Sobre', link: '/about' }, { name: 'Serviços', link: '/services' }, { name: 'Depoimentos', link: '/depoiments' }, { name: 'Contato', link: '/contact' }];
+    const pages = [{ name: 'Início', link: '/' }, { name: 'Sobre', link: '/about' }, { name: 'Serviços', link: '/services' }, { name: 'Depoimentos', link: '/depoiments' }, { name: 'Contato', link: '/contact' }];
 
     const handlePageChange = (index: number, name: string) => {
         setCurrentPage(index)
