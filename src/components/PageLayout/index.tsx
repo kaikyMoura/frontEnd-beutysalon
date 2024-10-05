@@ -15,7 +15,6 @@ const PageLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-
             if (setLoading) {
                 const handleRouteChange = () => {
                     setLoading(true);

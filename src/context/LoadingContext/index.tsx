@@ -21,7 +21,6 @@ export const LoadingProvider: React.FC<{ children: ReactNode }> = ({ children })
 
 export const useLoadingContext = () => {
     const context = React.useContext(LoadingContext);
-    console.log(context)
     if (!context) {
         throw new Error('useLoadingContext must be used within an LoadingProvider');
     }
