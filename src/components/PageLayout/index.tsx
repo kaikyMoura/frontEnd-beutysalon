@@ -14,7 +14,7 @@ const PageLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
 
     useEffect(() => {
         if (router.pathname === '/' || router.pathname === '/_error') {
-            router.push('/home');
+            router.replace('/home');
             setPageTitle('Início')
         }
     }, [router, setLoading, setPageTitle]);
